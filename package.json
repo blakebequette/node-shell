@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/blakebequette/node-shell/issues"
   },
-  "homepage": "https://github.com/blakebequette/node-shell#readme"
+  "homepage": "https://github.com/blakebequette/node-shell#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
 }

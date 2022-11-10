@@ -3,9 +3,11 @@ const pwd = require("./pwd");
 const cat = require("./cat");
 const newDate = require("./date");
 const echo = require("./echo");
-const head = require('./head');
+const head = require("./head");
 const tail = require("./tail");
-const sort2 = require('./sort')
+const sort2 = require("./sort");
+const wc = require("./wc");
+const uniq = require("./uniq");
 
 const done = (output) => {
   process.stdout.write(output + "\n" + "prompt > ");
@@ -34,13 +36,19 @@ process.stdin.on("data", (data) => {
   if (cmd === "echo") {
     echo(done);
   }
-  if (cmd === 'head') {
-    head(args[0], done)
+  if (cmd === "head") {
+    head(args[0], done);
   }
-  if (cmd === 'tail') {
-    tail(args[0], done)
+  if (cmd === "tail") {
+    tail(args[0], done);
   }
-  if (cmd === 'sort') {
-    sort2(args[0], done)
+  if (cmd === "sort") {
+    sort2(args[0], done);
+  }
+  if (cmd === "wc") {
+    wc(args[0], done);
+  }
+  if (cmd === "uniq") {
+    uniq(args[0], done);
   }
 });
