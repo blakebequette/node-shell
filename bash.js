@@ -8,9 +8,10 @@ const tail = require("./tail");
 const sort2 = require("./sort");
 const wc = require("./wc");
 const uniq = require("./uniq");
+const find2 = require('./find')
 
 const done = (output) => {
-  process.stdout.write(output + "\n" + "prompt > ");
+  process.stdout.write(output + "\n" + "prompt > \n");
 };
 
 //Output a prompt
@@ -50,5 +51,8 @@ process.stdin.on("data", (data) => {
   }
   if (cmd === "uniq") {
     uniq(args[0], done);
+  }
+  if (cmd === "find") {
+    find2(args[0], args[1], done)
   }
 });
